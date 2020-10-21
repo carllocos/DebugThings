@@ -1,0 +1,3 @@
+[submodule "libs/serialib"]
+	path = libs/serialib
+	url = git@github.com:carllocos/serialib.git
