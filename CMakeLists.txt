@@ -1,4 +1,4 @@
-cmake_minimum_required( VERSION 3.0 )
+cmake_minimum_required( VERSION 3.4 )
 
 project( DebugThings VERSION 1.0)
 
@@ -18,19 +18,12 @@ target_include_directories(DebugThings
     ${CMAKE_CURRENT_SOURCE_DIR}/src
   )
 
-
-
 # 3th party libraries
-add_library(serialib STATIC ./libs/serialib/src/serialib.cpp)
-target_include_directories(serialib
-  PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/libs/serialib/include/
-  PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/libs/serialib/src
-  )
 
 
-#linking with libs
+#serialib
+add_subdirectory(./libs/serialib/)
+
 target_link_libraries(DebugThings
   PRIVATE
     serialib
